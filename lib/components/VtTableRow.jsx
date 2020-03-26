@@ -1,6 +1,6 @@
 import RLTableRow from "./renderless/RLTableRow";
-import VtTableCell from "./VtTableCell";
-import VtChildRowToggler from "./VtChildRowToggler";
+import VtTableCell from "./VtTableCell.jsx";
+import VtChildRowToggler from "./VtChildRowToggler.jsx";
 
 export default {
     name: 'VtTableRow',

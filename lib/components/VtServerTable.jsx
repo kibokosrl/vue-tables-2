@@ -1,9 +1,9 @@
-import VtPerPageSelector from './VtPerPageSelector'
-import VtTable from './VtTable'
-import VtPagination from "./VtPagination";
-import VtDropdownPagination from "./VtDropdownPagination";
-import VtGenericFilter from "./VtGenericFilter";
-import VtColumnsDropdown from "./VtColumnsDropdown";
+import VtPerPageSelector from './VtPerPageSelector.jsx'
+import VtTable from './VtTable.jsx'
+import VtPagination from "./VtPagination.jsx";
+import VtDropdownPagination from "./VtDropdownPagination.jsx";
+import VtGenericFilter from "./VtGenericFilter.jsx";
+import VtColumnsDropdown from "./VtColumnsDropdown.jsx";
 
 export default {
     name: 'VtServerTable',

@@ -23,6 +23,7 @@ var _created = require("./mixins/created");
 var provide = require("./mixins/provide");
 
 var themes = {
+  uikit: require('./themes/uikit')(),
   bootstrap3: require('./themes/bootstrap3')(),
   bootstrap4: require('./themes/bootstrap4')(),
   bulma: require('./themes/bulma')()

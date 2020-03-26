@@ -1,7 +1,7 @@
 import RLFiltersRow from "./renderless/RLFiltersRow";
-import VtTextFilter from "./VtTextFilter";
-import VtListFilter from "./VtListFilter";
-import VtDateFilter from "./VtDateFilter";
+import VtTextFilter from "./VtTextFilter.jsx";
+import VtListFilter from "./VtListFilter.jsx";
+import VtDateFilter from "./VtDateFilter.jsx";
 
 export default {
     name: 'VtFiltersRow',

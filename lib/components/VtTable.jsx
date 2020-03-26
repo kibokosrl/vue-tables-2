@@ -1,6 +1,6 @@
 import RLTable from "./renderless/RLTable";
-import VtTableHead from "./VtTableHead";
-import VtTableBody from "./VtTableBody";
+import VtTableHead from "./VtTableHead.jsx";
+import VtTableBody from "./VtTableBody.jsx";
 
 export default {
     name: 'VtTable',

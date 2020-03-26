@@ -1,6 +1,6 @@
 import RLTableHead from "./renderless/RLTableHead";
-import VtHeadingsRow from "./VtHeadingsRow"
-import VtFiltersRow from "./VtFiltersRow";
+import VtHeadingsRow from "./VtHeadingsRow.jsx"
+import VtFiltersRow from "./VtFiltersRow.jsx";
 
 export default {
     name: 'VtTableHead',
