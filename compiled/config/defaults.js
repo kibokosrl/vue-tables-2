@@ -35,24 +35,24 @@ module.exports = function () {
     columnsDisplay: {},
     columnsDropdown: false,
     texts: {
-      count: "Showing {from} to {to} of {count} records|{count} records|One record",
-      first: "First",
-      last: "Last",
-      filter: "Filter:",
-      filterPlaceholder: "Search query",
-      limit: "Records:",
-      page: "Page:",
-      noResults: "No matching records",
-      filterBy: "Filter by {column}",
-      loading: "Loading...",
-      defaultOption: "Select {column}",
-      columns: "Columns"
+      count: "{count} risultati",
+      first: "Primo",
+      last: "Ultimo",
+      filter: "Filtra risultati: ",
+      filterPlaceholder: "Testo da ricercare",
+      limit: "Risultati: ",
+      page: "Pagina: ",
+      noResults: "Non ci sono risultati da mostrare",
+      filterBy: "Filtra {column}",
+      loading: 'Caricamento...',
+      defaultOption: 'Seleziona {column}',
+      columns: "Colonne"
     },
     sortIcon: {
-      is: "glyphicon-sort",
-      base: "glyphicon",
-      up: "glyphicon-chevron-up",
-      down: "glyphicon-chevron-down"
+      base: 'fa',
+      up: 'fa-sort-up',
+      down: 'fa-sort-down',
+      is: 'fa-sort'
     },
     sortingAlgorithm: function sortingAlgorithm(data, column) {
       return data.sort(this.getSortFn(column));

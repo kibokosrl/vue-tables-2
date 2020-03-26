@@ -64,7 +64,11 @@ var _default2 = {
             }
           }, [props.display('columns'), h("span", {
             "class": "".concat(props.theme.icon, " ").concat(props.theme.small)
-          }, [h("i", {
+          }, [props.theme.framework === 'uikit' ? h("i", {
+            attrs: {
+              "uk-icon": props.theme.dropdown.caret
+            }
+          }) : h("i", {
             "class": props.theme.dropdown.caret
           })])]), (0, _dropdownWrapper["default"])(h, props.theme.dropdown, cols, props.displayColumnsDropdown)]);
         }
