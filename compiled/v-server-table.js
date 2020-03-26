@@ -12,7 +12,7 @@ var _table = _interopRequireDefault(require("./table"));
 
 var _resizeableColumns = _interopRequireDefault(require("./helpers/resizeable-columns"));
 
-var _VtServerTable = _interopRequireDefault(require("./components/VtServerTable"));
+var _VtServerTable = _interopRequireDefault(require("./components/VtServerTable.jsx"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

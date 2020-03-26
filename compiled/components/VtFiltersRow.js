@@ -7,11 +7,11 @@ exports["default"] = void 0;
 
 var _RLFiltersRow = _interopRequireDefault(require("./renderless/RLFiltersRow"));
 
-var _VtTextFilter = _interopRequireDefault(require("./VtTextFilter"));
+var _VtTextFilter = _interopRequireDefault(require("./VtTextFilter.jsx"));
 
-var _VtListFilter = _interopRequireDefault(require("./VtListFilter"));
+var _VtListFilter = _interopRequireDefault(require("./VtListFilter.jsx"));
 
-var _VtDateFilter = _interopRequireDefault(require("./VtDateFilter"));
+var _VtDateFilter = _interopRequireDefault(require("./VtDateFilter.jsx"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

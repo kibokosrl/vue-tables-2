@@ -9,9 +9,9 @@ var _babelHelperVueJsxMergeProps = _interopRequireDefault(require("babel-helper-
 
 var _RLTableRow = _interopRequireDefault(require("./renderless/RLTableRow"));
 
-var _VtTableCell = _interopRequireDefault(require("./VtTableCell"));
+var _VtTableCell = _interopRequireDefault(require("./VtTableCell.jsx"));
 
-var _VtChildRowToggler = _interopRequireDefault(require("./VtChildRowToggler"));
+var _VtChildRowToggler = _interopRequireDefault(require("./VtChildRowToggler.jsx"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

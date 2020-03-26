@@ -7,13 +7,13 @@ exports["default"] = void 0;
 
 var _RLTableBody = _interopRequireDefault(require("./renderless/RLTableBody"));
 
-var _VtNoResultsRow = _interopRequireDefault(require("./VtNoResultsRow"));
+var _VtNoResultsRow = _interopRequireDefault(require("./VtNoResultsRow.jsx"));
 
-var _VtTableRow = _interopRequireDefault(require("./VtTableRow"));
+var _VtTableRow = _interopRequireDefault(require("./VtTableRow.jsx"));
 
-var _VtGroupRow = _interopRequireDefault(require("./VtGroupRow"));
+var _VtGroupRow = _interopRequireDefault(require("./VtGroupRow.jsx"));
 
-var _VtChildRow = _interopRequireDefault(require("./VtChildRow"));
+var _VtChildRow = _interopRequireDefault(require("./VtChildRow.jsx"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

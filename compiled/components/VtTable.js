@@ -7,9 +7,9 @@ exports["default"] = void 0;
 
 var _RLTable = _interopRequireDefault(require("./renderless/RLTable"));
 
-var _VtTableHead = _interopRequireDefault(require("./VtTableHead"));
+var _VtTableHead = _interopRequireDefault(require("./VtTableHead.jsx"));
 
-var _VtTableBody = _interopRequireDefault(require("./VtTableBody"));
+var _VtTableBody = _interopRequireDefault(require("./VtTableBody.jsx"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
