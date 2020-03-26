@@ -1,5 +1,5 @@
 import RLColumnsDropdown from "./renderless/RLColumnsDropdown";
-import dropdownWrapper from "./dropdown-wrapper.jsx"
+import dropdownWrapper from "./dropdown-wrapper"
 
 export default {
     name: 'VtColumnsDropdown',

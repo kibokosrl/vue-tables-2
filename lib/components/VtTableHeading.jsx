@@ -1,5 +1,5 @@
 import RLTableHeading from "./renderless/RLTableHeading";
-import VtSortControl from "./VtSortControl.jsx";
+import VtSortControl from "./VtSortControl";
 
 export default {
     name: 'VtTableHeading',

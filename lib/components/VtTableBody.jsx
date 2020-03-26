@@ -1,8 +1,8 @@
 import RLTableBody from "./renderless/RLTableBody";
-import VtNoResultsRow from "./VtNoResultsRow.jsx";
-import VtTableRow from "./VtTableRow.jsx";
-import VtGroupRow from "./VtGroupRow.jsx";
-import VtChildRow from "./VtChildRow.jsx"
+import VtNoResultsRow from "./VtNoResultsRow";
+import VtTableRow from "./VtTableRow";
+import VtGroupRow from "./VtGroupRow";
+import VtChildRow from "./VtChildRow"
 
 export default {
     name: 'VtTableBody',

@@ -5,17 +5,17 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _VtPerPageSelector = _interopRequireDefault(require("./VtPerPageSelector.jsx"));
+var _VtPerPageSelector = _interopRequireDefault(require("./VtPerPageSelector"));
 
-var _VtTable = _interopRequireDefault(require("./VtTable.jsx"));
+var _VtTable = _interopRequireDefault(require("./VtTable"));
 
-var _VtPagination = _interopRequireDefault(require("./VtPagination.jsx"));
+var _VtPagination = _interopRequireDefault(require("./VtPagination"));
 
-var _VtDropdownPagination = _interopRequireDefault(require("./VtDropdownPagination.jsx"));
+var _VtDropdownPagination = _interopRequireDefault(require("./VtDropdownPagination"));
 
-var _VtGenericFilter = _interopRequireDefault(require("./VtGenericFilter.jsx"));
+var _VtGenericFilter = _interopRequireDefault(require("./VtGenericFilter"));
 
-var _VtColumnsDropdown = _interopRequireDefault(require("./VtColumnsDropdown.jsx"));
+var _VtColumnsDropdown = _interopRequireDefault(require("./VtColumnsDropdown"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

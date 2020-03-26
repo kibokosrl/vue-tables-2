@@ -12,7 +12,7 @@ var _data2 = _interopRequireDefault(require("./state/data"));
 
 var _resizeableColumns = _interopRequireDefault(require("./helpers/resizeable-columns"));
 
-var _VtClientTable = _interopRequireDefault(require("./components/VtClientTable.jsx"));
+var _VtClientTable = _interopRequireDefault(require("./components/VtClientTable"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

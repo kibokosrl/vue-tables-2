@@ -7,7 +7,7 @@ exports["default"] = void 0;
 
 var _RLTableHeading = _interopRequireDefault(require("./renderless/RLTableHeading"));
 
-var _VtSortControl = _interopRequireDefault(require("./VtSortControl.jsx"));
+var _VtSortControl = _interopRequireDefault(require("./VtSortControl"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 

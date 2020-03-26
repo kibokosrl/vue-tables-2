@@ -1,5 +1,5 @@
 import RLHeadingsRow from "./renderless/RLHeadingsRow";
-import VtTableHeading from "./VtTableHeading.jsx";
+import VtTableHeading from "./VtTableHeading";
 
 export default {
     name: 'VtHeadingsRow',
