@@ -50,10 +50,10 @@ module.exports = function () {
       columns: "Columns"
     },
     sortIcon: {
-      is: "glyphicon-sort",
-      base: "glyphicon",
-      up: "glyphicon-chevron-up",
-      down: "glyphicon-chevron-down"
+      base: 'fa',
+      up: 'fa-sort-up',
+      down: 'fa-sort-down',
+      is: 'fa-sort'
     },
     addSortedClassToCells: false,
     sortingAlgorithm: function sortingAlgorithm(data, column) {

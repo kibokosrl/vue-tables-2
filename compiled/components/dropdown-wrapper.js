@@ -1,6 +1,18 @@
 "use strict";
 
 module.exports = function (h, classes, columns, display) {
+  if (classes.framework === 'uikit') {
+    return h("div", {
+      attrs: {
+        "uk-dropdown": true
+      },
+      "class": classes.menu,
+      style: display ? 'uk-visible' : 'uk-invisible'
+    }, [h("ul", {
+      "class": classes.content
+    }, [columns])]);
+  }
+
   if (classes.framework === 'bulma') {
     return h("div", {
       "class": classes.menu,

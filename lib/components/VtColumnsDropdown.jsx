@@ -36,7 +36,7 @@ export default {
                                     on-click={props.toggleColumnsDropdown}>
                                 {props.display('columns')}
                                 <span class={`${props.theme.icon} ${props.theme.small}`}>
-                                    <i class={props.theme.dropdown.caret}></i>
+                                    {props.theme.framework === 'uikit' ? <i uk-icon={props.theme.dropdown.caret}></i> : <i class={props.theme.dropdown.caret}></i>}
                                  </span>
                             </button>
 
