@@ -37,18 +37,27 @@ export default {
         }
     },
     computed: {
-      customQueries: {
-        get() {
-          return this.$refs.table.customQueries;
+        customQueries: {
+            get() {
+                return this.$refs.table.customQueries;
+            },
+            set(val) {
+                this.$refs.table.customQueries = val;
+            }
         },
-        set(val) {
-          this.$refs.table.customQueries = val;
+        data() {
+            return this.$refs.table.tableData
+        },
+        filtersCount() {
+            return this.$refs.table.filtersCount
         }
-      }
     },
     methods: {
         refresh() {
-          this.$refs.table.refresh();
+            this.$refs.table.refresh();
+        },
+        getData() {
+            return this.$refs.table.getData();
         },
         setFilter(val) {
             this.$refs.table.setFilter(val);
@@ -59,6 +68,9 @@ export default {
         setOrder(column, asc) {
             this.$refs.table.setOrder(column, asc);
         },
+        setLimit(limit) {
+            this.$refs.table.setLimit(limit);
+        },
         toggleChildRow(rowId) {
             this.$refs.table.toggleChildRow(rowId);
         },
@@ -67,7 +79,20 @@ export default {
         },
         getResponseData(response) {
             return this.$refs.table.getResponseData(response);
-        }
+        },
+        resetQuery() {
+            this.$refs.table.resetQuery()
+        },
+        getRequestParams() {
+          return this.$refs.table.getRequestParams()
+        },
+        setRequestParams(params, sendRequest = true) {
+            return this.$refs.table.setRequestParams(params, sendRequest)
+        },
+        setCustomFilters(params, sendRequest = true) {
+          return this.$refs.table.setCustomFilters(params, sendRequest)
+        },
+        resetCustomFilters: require('../methods/reset-custom-filters')
     },
     provide() {
         return {
@@ -79,7 +104,8 @@ export default {
         prop: "data"
     },
     render(h) {
-        return <r-l-server-table url={this.url} columns={this.columns} name={this.name} options={this.options} ref="table" scopedSlots={
+        return <r-l-server-table url={this.url} columns={this.columns} name={this.name} options={this.options}
+                                 ref="table" scopedSlots={
             {
                 default: function (props) {
                     return props.override ? h(props.override, {
@@ -89,14 +115,16 @@ export default {
                         <div class={props.theme.row}>
                             <div class={props.theme.column}>
                                 {!props.opts.filterByColumn && props.opts.filterable ?
-                                    <div class={`${props.theme.field} ${props.theme.inline} ${props.theme.left} VueTables__search`}>
+                                    <div
+                                        class={`${props.theme.field} ${props.theme.inline} ${props.theme.left} VueTables__search`}>
                                         {props.slots.beforeFilter}
-                                        <vt-generic-filter/>
+                                        <vt-generic-filter ref="genericFilter"/>
                                         {props.slots.afterFilter}
                                     </div> : ''}
                                 {props.slots.afterFilterWrapper}
 
-                                {props.perPageValues.length > 1 ? <div class={`${props.theme.field} ${props.theme.inline} ${props.theme.right} VueTables__limit`}>
+                                {props.perPageValues.length > 1 || props.opts.alwaysShowPerPageSelect ? <div
+                                    class={`${props.theme.field} ${props.theme.inline} ${props.theme.right} VueTables__limit`}>
                                     {props.slots.beforeLimit}
                                     <vt-per-page-selector/>
                                     {props.slots.afterLimit}
@@ -104,12 +132,14 @@ export default {
 
                                 {props.opts.pagination.dropdown && props.totalPages > 1 ?
                                     <div class="VueTables__pagination-wrapper">
-                                        <div class={`${props.theme.field} ${props.theme.inline} ${props.theme.right} VueTables__dropdown-pagination`}>
+                                        <div
+                                            class={`${props.theme.field} ${props.theme.inline} ${props.theme.right} VueTables__dropdown-pagination`}>
                                             <vt-dropdown-pagination/>
                                         </div>
                                     </div> : ''}
 
-                                {props.opts.columnsDropdown ? <div class={`VueTables__columns-dropdown-wrapper ${props.theme.right} ${props.theme.dropdown.container}`}>
+                                {props.opts.columnsDropdown ? <div
+                                    class={`VueTables__columns-dropdown-wrapper ${props.theme.right} ${props.theme.dropdown.container}`}>
                                     <vt-columns-dropdown/>
                                 </div> : ''}
                             </div>
@@ -121,7 +151,8 @@ export default {
                         </div>
                         {props.slots.afterTable}
 
-                        <vt-pagination/>
+                        {props.opts.pagination.show ? <vt-pagination/> : ''}
+
                     </div>
                 }
             }

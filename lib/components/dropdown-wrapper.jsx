@@ -4,7 +4,7 @@ module.exports = function(h, classes, columns, display) {
         <ul class={classes.content}>{columns}</ul>
         </div>
     }
-
+    
     if (classes.framework==='bulma') {
         return <div class={classes.menu} style={display?'display:block':'display:none'}>
         <div class={classes.content}>{columns}</div>

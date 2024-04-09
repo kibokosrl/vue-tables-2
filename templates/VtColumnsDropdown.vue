@@ -6,7 +6,8 @@
                     @click="props.toggleColumnsDropdown">
                 {{props.display('columns')}}
                 <span :class="`${props.theme.icon} ${props.theme.small}`">
-                    <i :class="props.theme.dropdown.caret"></i>
+                    <i v-if="props.theme.framework === 'uikit'" :uk-icon="props.theme.dropdown.caret"></i>
+                    <i v-else :class="props.theme.dropdown.caret"></i>
                </span>
             </button>
             <ul :class="props.theme.dropdown.menu" :style="props.displayColumnsDropdown ?'display:block':'display:none'">
