@@ -32,6 +32,7 @@ var _default2 = {
             "class": props.theme.label
           }, [props.display("filter")]), h("input", {
             "class": "VueTables__search__input ".concat(props.theme.input, " ").concat(props.theme.small),
+            ref: "filter",
             attrs: {
               type: "text",
               placeholder: props.display('filterPlaceholder'),
@@ -39,12 +40,20 @@ var _default2 = {
               autocomplete: "off"
             },
             on: {
-              "keyup": props.search(props.debounce)
+              "keyup": props.search(props.opts.debounce)
             }
           })]);
         }
       }
     });
+  },
+  methods: {
+    focus: function focus() {
+      this.$refs.filter.focus();
+    },
+    blur: function blur() {
+      this.$refs.filter.blur();
+    }
   }
 };
 exports["default"] = _default2;

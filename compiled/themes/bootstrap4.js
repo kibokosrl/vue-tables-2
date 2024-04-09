@@ -3,6 +3,7 @@
 module.exports = function () {
   return {
     framework: 'bootstrap4',
+    td: '',
     table: 'table table-striped table-bordered table-hover',
     row: 'row',
     column: 'col-md-12',
@@ -28,7 +29,7 @@ module.exports = function () {
       caret: 'caret'
     },
     pagination: {
-      nav: '',
+      nav: 'text-center',
       count: '',
       wrapper: '',
       list: 'pagination',

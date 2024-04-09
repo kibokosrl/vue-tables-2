@@ -51,6 +51,9 @@ var _default2 = {
     }
   },
   methods: {
+    setLoadingState: function setLoadingState(isLoading) {
+      this.$refs.table.loading = isLoading;
+    },
     setFilter: function setFilter(val) {
       this.$refs.table.setFilter(val);
     },
@@ -60,12 +63,22 @@ var _default2 = {
     setOrder: function setOrder(column, asc) {
       this.$refs.table.setOrder(column, asc);
     },
+    setLimit: function setLimit(limit) {
+      this.$refs.table.setLimit(limit);
+    },
     toggleChildRow: function toggleChildRow(rowId) {
       this.$refs.table.toggleChildRow(rowId);
     },
     getOpenChildRows: function getOpenChildRows() {
       var rows = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
       return this.$refs.table.getOpenChildRows(rows);
+    },
+    resetQuery: function resetQuery() {
+      this.$refs.table.resetQuery();
+    },
+    setCustomFilters: function setCustomFilters(params) {
+      var sendRequest = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      return this.$refs.table.setCustomFilters(params, sendRequest);
     }
   },
   computed: {
@@ -74,6 +87,9 @@ var _default2 = {
     },
     allFilteredData: function allFilteredData() {
       return this.$refs.table.allFilteredData;
+    },
+    filtersCount: function filtersCount() {
+      return this.$refs.table.filtersCount;
     }
   },
   provide: function provide() {
@@ -114,7 +130,9 @@ var _default2 = {
             "class": props.theme.column
           }, [!props.opts.filterByColumn && props.opts.filterable ? h("div", {
             "class": "".concat(props.theme.field, " ").concat(props.theme.inline, " ").concat(props.theme.left, " VueTables__search")
-          }, [props.slots.beforeFilter, h("vt-generic-filter"), props.slots.afterFilter]) : '', props.slots.afterFilterWrapper, props.perPageValues.length > 1 ? h("div", {
+          }, [props.slots.beforeFilter, h("vt-generic-filter", {
+            ref: "genericFilter"
+          }), props.slots.afterFilter]) : '', props.slots.afterFilterWrapper, props.perPageValues.length > 1 || props.opts.alwaysShowPerPageSelect ? h("div", {
             "class": "".concat(props.theme.field, " ").concat(props.theme.inline, " ").concat(props.theme.right, " VueTables__limit")
           }, [props.slots.beforeLimit, h("vt-per-page-selector"), props.slots.afterLimit]) : '', props.opts.pagination.dropdown && props.totalPages > 1 ? h("div", {
             "class": "VueTables__pagination-wrapper"
@@ -126,7 +144,7 @@ var _default2 = {
             "class": "table-responsive"
           }, [h("vt-table", {
             ref: "vt_table"
-          })]), props.slots.afterTable, h("vt-pagination")]);
+          })]), props.slots.afterTable, props.opts.pagination.show ? h("vt-pagination") : '']);
         }
       }
     });

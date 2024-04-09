@@ -43,6 +43,7 @@ module.exports = function () {
       limit: "Risultati: ",
       page: "Pagina: ",
       noResults: "Non ci sono risultati da mostrare",
+      noRequest: "Seleziona almeno un filtro",
       filterBy: "Filtra {column}",
       loading: 'Caricamento...',
       defaultOption: 'Seleziona {column}',
@@ -54,6 +55,7 @@ module.exports = function () {
       down: 'fa-sort-down',
       is: 'fa-sort'
     },
+    addSortedClassToCells: false,
     sortingAlgorithm: function sortingAlgorithm(data, column) {
       return data.sort(this.getSortFn(column));
     },
@@ -70,6 +72,7 @@ module.exports = function () {
     headings: {},
     headingsTooltips: {},
     pagination: {
+      show: true,
       dropdown: false,
       chunk: 10,
       edge: false,
@@ -78,6 +81,7 @@ module.exports = function () {
     },
     childRow: false,
     childRowTogglerFirst: true,
+    disabledChildRows: false,
     showChildRowToggler: true,
     uniqueKey: "id",
     requestFunction: false,
@@ -112,6 +116,7 @@ module.exports = function () {
     resizableColumns: true,
     editableColumns: [],
     tabbable: true,
+    infiniteScroll: false,
     componentsOverride: {}
   };
 };

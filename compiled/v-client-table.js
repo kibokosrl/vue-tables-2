@@ -100,6 +100,10 @@ exports.install = function (Vue, globalOptions, useVuex) {
         if (_this.page > _this.totalPages) {
           _this.setPage(_this.totalPages);
         }
+
+        if (_this.vuex) {
+          _this.commit('SET_CLIENT_DATA', _this.data);
+        }
       });
     },
     model: {
@@ -108,6 +112,7 @@ exports.install = function (Vue, globalOptions, useVuex) {
     data: function data() {
       return _merge["default"].recursive(_data(), {
         source: "client",
+        loading: false,
         theme: typeof theme === 'string' ? themes[theme] : theme(),
         globalOptions: globalOptions,
         componentsOverride: componentsOverride,
@@ -159,9 +164,9 @@ exports.install = function (Vue, globalOptions, useVuex) {
         this.setOrder(state.orderBy.column, state.orderBy.ascending);
 
         if (this.vuex) {
-          this.commit("SET_LIMIT", state.perPage);
+          this.commit("SET_LIMIT", parseInt(state.perPage));
         } else {
-          this.limit = state.perPage;
+          this.limit = parseInt(state.perPage);
         }
 
         this.setPage(state.page);

@@ -58,11 +58,20 @@ var _default2 = {
       set: function set(val) {
         this.$refs.table.customQueries = val;
       }
+    },
+    data: function data() {
+      return this.$refs.table.tableData;
+    },
+    filtersCount: function filtersCount() {
+      return this.$refs.table.filtersCount;
     }
   },
   methods: {
     refresh: function refresh() {
       this.$refs.table.refresh();
+    },
+    getData: function getData() {
+      return this.$refs.table.getData();
     },
     setFilter: function setFilter(val) {
       this.$refs.table.setFilter(val);
@@ -73,6 +82,9 @@ var _default2 = {
     setOrder: function setOrder(column, asc) {
       this.$refs.table.setOrder(column, asc);
     },
+    setLimit: function setLimit(limit) {
+      this.$refs.table.setLimit(limit);
+    },
     toggleChildRow: function toggleChildRow(rowId) {
       this.$refs.table.toggleChildRow(rowId);
     },
@@ -82,7 +94,22 @@ var _default2 = {
     },
     getResponseData: function getResponseData(response) {
       return this.$refs.table.getResponseData(response);
-    }
+    },
+    resetQuery: function resetQuery() {
+      this.$refs.table.resetQuery();
+    },
+    getRequestParams: function getRequestParams() {
+      return this.$refs.table.getRequestParams();
+    },
+    setRequestParams: function setRequestParams(params) {
+      var sendRequest = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+      return this.$refs.table.setRequestParams(params, sendRequest);
+    },
+    setCustomFilters: function setCustomFilters(params) {
+      var sendRequest = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+      return this.$refs.table.setCustomFilters(params, sendRequest);
+    },
+    resetCustomFilters: require('../methods/reset-custom-filters')
   },
   provide: function provide() {
     var _this = this;
@@ -122,7 +149,9 @@ var _default2 = {
             "class": props.theme.column
           }, [!props.opts.filterByColumn && props.opts.filterable ? h("div", {
             "class": "".concat(props.theme.field, " ").concat(props.theme.inline, " ").concat(props.theme.left, " VueTables__search")
-          }, [props.slots.beforeFilter, h("vt-generic-filter"), props.slots.afterFilter]) : '', props.slots.afterFilterWrapper, props.perPageValues.length > 1 ? h("div", {
+          }, [props.slots.beforeFilter, h("vt-generic-filter", {
+            ref: "genericFilter"
+          }), props.slots.afterFilter]) : '', props.slots.afterFilterWrapper, props.perPageValues.length > 1 || props.opts.alwaysShowPerPageSelect ? h("div", {
             "class": "".concat(props.theme.field, " ").concat(props.theme.inline, " ").concat(props.theme.right, " VueTables__limit")
           }, [props.slots.beforeLimit, h("vt-per-page-selector"), props.slots.afterLimit]) : '', props.opts.pagination.dropdown && props.totalPages > 1 ? h("div", {
             "class": "VueTables__pagination-wrapper"
@@ -134,7 +163,7 @@ var _default2 = {
             "class": "table-responsive"
           }, [h("vt-table", {
             ref: "vt_table"
-          })]), props.slots.afterTable, h("vt-pagination")]);
+          })]), props.slots.afterTable, props.opts.pagination.show ? h("vt-pagination") : '']);
         }
       }
     });

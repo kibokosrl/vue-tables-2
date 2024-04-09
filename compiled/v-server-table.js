@@ -84,6 +84,8 @@ exports.install = function (Vue, globalOptions, useVuex) {
             }.bind(this), 0);
           }
         }.bind(this));
+      } else {
+        this.loading = false;
       }
     },
     mounted: function mounted() {
@@ -102,6 +104,7 @@ exports.install = function (Vue, globalOptions, useVuex) {
       return _merge["default"].recursive(_data(), {
         source: "server",
         loading: true,
+        initialRequestSent: false,
         lastKeyStrokeAt: false,
         globalOptions: globalOptions,
         componentsOverride: componentsOverride,
@@ -114,6 +117,8 @@ exports.install = function (Vue, globalOptions, useVuex) {
       setData: require("./methods/set-data"),
       serverSearch: require("./methods/server-search"),
       registerServerFilters: require("./methods/register-server-filters"),
+      getRequestParams: require("./methods/get-request-params"),
+      setRequestParams: require("./methods/set-request-params"),
       loadState: function loadState() {
         var _this = this;
 
@@ -132,14 +137,14 @@ exports.install = function (Vue, globalOptions, useVuex) {
             query: state.query,
             customQueries: state.customQueries,
             page: state.page,
-            limit: state.perPage,
+            limit: parseInt(state.perPage),
             orderBy: state.orderBy
           });
         } else {
           this.page = state.page;
           this.query = state.query;
           this.customQueries = state.customQueries;
-          this.limit = state.perPage;
+          this.limit = parseInt(state.perPage);
           this.orderBy = state.orderBy;
         }
 

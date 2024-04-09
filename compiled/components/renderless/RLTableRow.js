@@ -15,14 +15,16 @@ var _default = {
       row: function row() {
         return _this.row;
       },
-      index: this.index
+      index: function index() {
+        return _this.index;
+      }
     };
   },
   render: function render() {
     return this.$scopedSlots["default"]({
+      opts: this.opts(),
       columns: this.allColumns(),
       hasChildRow: this.hasChildRow(),
-      opts: this.opts(),
       rowId: this.row[this.opts().uniqueKey],
       rowAttrs: {
         "class": this.opts().rowClassCallback ? this.opts().rowClassCallback(this.row) : '',
